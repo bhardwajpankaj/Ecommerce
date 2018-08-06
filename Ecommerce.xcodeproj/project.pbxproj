@@ -36,6 +36,7 @@
 		CE014128211742B50031903C /* ProductCollectionViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE014127211742B50031903C /* ProductCollectionViewControllerTests.swift */; };
 		CE01412A211769D50031903C /* ProductCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE014129211769D50031903C /* ProductCollectionViewCellTests.swift */; };
 		CE01412C211840AA0031903C /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01412B211840AA0031903C /* ProductDetailViewModel.swift */; };
+		CE01412E21184E4C0031903C /* ProductImageCollectionViewCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE01412D21184E4C0031903C /* ProductImageCollectionViewCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		CE014127211742B50031903C /* ProductCollectionViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewControllerTests.swift; sourceTree = "<group>"; };
 		CE014129211769D50031903C /* ProductCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCellTests.swift; sourceTree = "<group>"; };
 		CE01412B211840AA0031903C /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		CE01412D21184E4C0031903C /* ProductImageCollectionViewCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImageCollectionViewCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +259,7 @@
 				CE0141252117337A0031903C /* ProductDetailViewControllerTests.swift */,
 				CE014127211742B50031903C /* ProductCollectionViewControllerTests.swift */,
 				CE014129211769D50031903C /* ProductCollectionViewCellTests.swift */,
+				CE01412D21184E4C0031903C /* ProductImageCollectionViewCellTests.swift */,
 			);
 			path = EcommerceTests;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 			files = (
 				CE01412021172D6A0031903C /* NetworkManagerTests.swift in Sources */,
 				CE01411C211726EA0031903C /* ProductCollectionViewControllerViewModelTests.swift in Sources */,
+				CE01412E21184E4C0031903C /* ProductImageCollectionViewCellTests.swift in Sources */,
 				CE01411E21172D350031903C /* ProductTests.swift in Sources */,
 				CE0141262117337A0031903C /* ProductDetailViewControllerTests.swift in Sources */,
 				CE01412221172DC10031903C /* ImageDownloaderTests.swift in Sources */,

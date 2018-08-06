@@ -11,27 +11,26 @@ import XCTest
 
 class ProductCollectionViewCellTests: XCTestCase {
     
-    private var sut: ProductCollectionViewCell?
-
     override func setUp() {
         super.setUp()
-        let bundle = Bundle(identifier: "ProductCollectionViewCell")
-        let nib = bundle?.loadNibNamed("ProductCollectionViewCell", owner: nil, options: nil)
-        sut = nib?.first as? ProductCollectionViewCell
-        
+        let bundle = Bundle(for: ProductCollectionViewCell.self)
+        guard let cell = bundle.loadNibNamed("ProductCollectionViewCell", owner: nil)?.first as? ProductCollectionViewCell else {
+            return XCTFail()
+        }
+        cell.prepareForReuse()
+        cell.updateInterface(title: "Ball", price: 5.0, discount: "5 % Off")
+        XCTAssertEqual(cell.titleLabel.text!, "Ball")
     }
     
     override func tearDown() {
-        sut = nil
         super.tearDown()
     }
     
     func tessutIniatedata() {
-        sut?.updateInterface(title: "Ball", price: 5.0, discount: "5 % Off")
         
-        XCTAssertEqual(sut?.titleLabel.text!, "Ball")
 
     }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

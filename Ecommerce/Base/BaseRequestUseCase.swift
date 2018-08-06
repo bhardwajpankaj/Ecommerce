@@ -29,24 +29,24 @@ class BaseRequestUseCase <S : BaseRequestDTO ,T : BaseResponseDTO > {
         
         return NetworkManager.shared.getData(url:url) { (data, error) in
             if let error = error  {
-                DispatchQueue.main.sync {
+                DispatchQueue.main.async {
                     completionHandler(nil , error)
                 }
             }else{
                 guard let unwrappedData = data else {
-                    DispatchQueue.main.sync {
+                    DispatchQueue.main.async {
                         completionHandler(nil,nil);
                     }
                     return
                 }
                 do {
                     let response = try self.decode(data: unwrappedData)
-                    DispatchQueue.main.sync {
+                    DispatchQueue.main.async {
                         completionHandler(response,nil)
                     }
                 }
                 catch {
-                    DispatchQueue.main.sync {
+                    DispatchQueue.main.async {
                         completionHandler(nil,error)
                     }
                 }

@@ -47,10 +47,6 @@ class ProductDetailViewController: BaseViewController {
         imageCollectionView.register(cell: ProductImageCollectionViewCell.self)
 
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true) {}

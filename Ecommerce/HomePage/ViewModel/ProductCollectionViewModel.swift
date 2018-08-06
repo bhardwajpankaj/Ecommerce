@@ -8,31 +8,31 @@
 
 
 class ProductCollectionViewModel: BaseViewModel {
-
-   private var currentPage : Int = 0
-   private let pageSize : Int = 30
-   private var requestUseCase :ProductCollectionRequestUseCase?
-   var boolLoading : Bool = false
+    
+    private var currentPage : Int = 0
+    private let pageSize : Int = 30
+    private var requestUseCase :ProductCollectionRequestUseCase?
+    var boolLoading : Bool = false
     var boolMoreDataAvailable : Bool = true
-   var arrCollectionData : [Product]?
+    var arrCollectionData : [Product]?
     
     var numberOfSection = 0
     
     
     
-    func getProductInfoFromStarting(completionHandler :@escaping (String?)->Void) {
+    func getProductInfoFromStarting(completionHandler :@escaping (String?)->Void,useCase : ProductCollectionRequestUseCase = ProductCollectionRequestUseCase()) {
         currentPage = 0
         boolMoreDataAvailable = true
-        getProductInfo(pageNo: currentPage, pageSize: pageSize, completionHandler: completionHandler)
+        getProductInfo(pageNo: currentPage, pageSize: pageSize, completionHandler: completionHandler,useCase: useCase)
     }
-    func getNextProductInfo(completionHandler :@escaping (String?)->Void) {
-        getProductInfo(pageNo: currentPage, pageSize: pageSize, completionHandler: completionHandler)
+    func getNextProductInfo(completionHandler :@escaping (String?)->Void,useCase : ProductCollectionRequestUseCase = ProductCollectionRequestUseCase()) {
+        getProductInfo(pageNo: currentPage, pageSize: pageSize, completionHandler: completionHandler,useCase: useCase)
     }
-   
-    private func getProductInfo(pageNo : Int , pageSize : Int ,  completionHandler : @escaping(String?)->Void) {
+    
+    private func getProductInfo(pageNo : Int , pageSize : Int ,  completionHandler : @escaping(String?)->Void ,useCase : ProductCollectionRequestUseCase = ProductCollectionRequestUseCase() ) {
         boolLoading = true;
         let requestDTO = ProductRequestDTO(pageSize: pageSize, page: pageNo)
-        requestUseCase = ProductCollectionRequestUseCase()
+        requestUseCase = useCase
         requestUseCase?.initialize(requestDTO: requestDTO, completionHandler: { (responseDTO, error) in
             self.boolLoading = false
             if(error != nil)
