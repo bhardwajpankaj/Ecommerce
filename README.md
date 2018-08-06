@@ -1,5 +1,5 @@
 # Ecommerce
-A sample Ecommerce app using MVVM and without any third part library for image downloading or data parsing
+A sample Ecommerce app using MVVM and without any third party library for image downloading or data parsing
 
 ## Test Coverage
 
