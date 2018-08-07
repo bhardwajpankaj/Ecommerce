@@ -20,21 +20,6 @@ extension NibLoadableView where Self : UIView {
     
 }
 
-extension UITableView{
-    func register<T>(cell : T.Type) where T : ReuseIdentifier,T : UITableViewCell , T : NibLoadableView {
-        register(UINib(nibName: T.nibName, bundle: nil), forCellReuseIdentifier: T.reuseIdentifier)
-    }
-    
-    func dequeueReusableCell<T>(indexPath: IndexPath) -> T where T : UITableViewCell, T : ReuseIdentifier {
-        guard  let cell = dequeueReusableCell(withIdentifier: T.reuseIdentifier, for: indexPath) as? T else {
-            fatalError("\(type(of: self)) Could not dequeue cell with identifier \(T.reuseIdentifier)")
-        }
-        return cell
-    }
-}
-
-
-
 extension UICollectionView {
     func register<T>(cell : T.Type) where T : ReuseIdentifier,T : UICollectionViewCell , T : NibLoadableView {
         register(UINib(nibName: T.nibName, bundle: nil), forCellWithReuseIdentifier: T.reuseIdentifier)
