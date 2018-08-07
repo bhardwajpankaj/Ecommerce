@@ -1,5 +1,10 @@
 # Ecommerce
-A sample Ecommerce app using MVC and without any third part library for image downloading or data parsing
+A sample Ecommerce app using MVVM and without any third party library for image downloading or data parsing
+
+## Test Coverage
+
+![screen shot 2018-08-06 at 3 38 36 pm](https://user-images.githubusercontent.com/5277297/43711140-6d857f2a-998f-11e8-80d2-29b49c858e00.png)
+
 
 ## You can change number of tiles at Home Screen by changing below variable in Constants.swift file
     
