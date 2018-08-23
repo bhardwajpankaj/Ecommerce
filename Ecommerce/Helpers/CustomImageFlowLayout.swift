@@ -24,10 +24,11 @@ class CustomImageFlowLayout: UICollectionViewFlowLayout {
         set {
         }
         get {
+            // Finding cell size according to the margins
             let numberOfColumns = Constants.NumberOfColumns
-            let itemWidth = (Int(self.collectionView!.bounds.width) - (numberOfColumns - 1)) / numberOfColumns
-            let marginToWidth = ((itemWidth * numberOfColumns) + (Constants.marginAround * 2)) - Int(self.collectionView!.bounds.width)
-            return CGSize(width: itemWidth - marginToWidth, height: Constants.cellHeight)
+            let itemWidth = ((CGFloat(self.collectionView!.bounds.width)) / CGFloat(numberOfColumns))
+            let itWidth = itemWidth - CGFloat((Constants.marginAround * (numberOfColumns + 1))/numberOfColumns)
+            return CGSize(width: itWidth, height: CGFloat(Constants.cellHeight))
         }
     }
     private func setupLayout() {
